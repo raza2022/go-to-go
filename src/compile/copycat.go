@@ -48,6 +48,9 @@ func GetHardwareData(w http.ResponseWriter, r *http.Request) {
 	interfStat, err := net.Interfaces()
 	dealwithErr(err)
 
+	fmt.Println("**************")
+	fmt.Println(vmStat)
+
 	html := "<html>OS : " + runtimeOS + "<br>"
 	html = html + "Total memory: " + bytesToSize(vmStat.Total) + "<br>"
 	html = html + "Free memory: " + bytesToSize(vmStat.Free) + " <br>"
